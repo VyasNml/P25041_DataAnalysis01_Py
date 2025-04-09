@@ -26,6 +26,9 @@ file['rank'] = file.groupby('year')['points_differential'].rank(method='first', 
 top3_file = file[file['rank'] <= 3]
 top3_file['rank'] = top3_file['rank'].astype(int)
 
+#Implementing Line Plot
+plt.figure(figsize=(14, 6))
+sns.lineplot(data=top3_file, x='year', y='points_differential', hue='rank', style='rank', marker='o', dashes=True)
 
 
 
