@@ -29,8 +29,11 @@ top3_file['rank'] = top3_file['rank'].astype(int)
 #Implementing Line Plot
 plt.figure(figsize=(14, 6))
 sns.lineplot(data=top3_file, x='year', y='points_differential', hue='rank', style='rank', marker='o', dashes=True)
-
-
+plt.title('Top 3 Teams by Points Differential Across Seasons (Rank-wise)')
+plt.xlabel('Year')
+plt.ylabel('Points Differential')
+plt.legend(title='Rank')
+plt.show()
 
 
 
