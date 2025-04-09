@@ -21,9 +21,10 @@ print(file.isnull().sum(),"\n")
 
 
 #Objective 1
+#Selecting Required data
 file['rank'] = file.groupby('year')['points_differential'].rank(method='first', ascending=False)
 top3_file = file[file['rank'] <= 3]
-
+top3_file['rank'] = top3_file['rank'].astype(int)
 
 
 
