@@ -20,6 +20,11 @@ file = file.dropna()
 print(file.isnull().sum(),"\n")
 
 
+#Objective 1
+# Step 1: Rank teams by points_differential within each year
+file['rank'] = file.groupby('year')['points_differential'].rank(method='first', ascending=False)
+
+
 
 
 
