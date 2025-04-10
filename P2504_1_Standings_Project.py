@@ -40,22 +40,20 @@ plt.show()
 
 
 
-plt.figure(figsize=(10, 6))
-sns.scatterplot(
-    data=file_filtered,
-    x='offensive_ranking',
-    y='defensive_ranking',
-    hue='team_name',  
-    palette='tab10',
-    alpha=0.7
-)
+# Calculate the average points scored and conceded for each team
+avg_points = df.groupby('team_name')[['points_for', 'points_against']].mean().reset_index()
 
-plt.title('Offensive vs Defensive Rankings of Teams')
-plt.xlabel('Offensive Ranking (Lower is Better)')
-plt.ylabel('Defensive Ranking (Lower is Better)')
+# Create the scatter plot
+plt.figure(figsize=(10, 8))
+sns.scatterplot(data=avg_points, x='points_for', y='points_against', hue='team_name', s=100)
+plt.title('Average Offensive vs. Defensive Strengths (Aggregated)')
+plt.xlabel('Average Points Scored')
+plt.ylabel('Average Points Conceded')
 plt.grid(True)
+plt.legend(title='Team', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.show()
+
 
 
 # Objective 3
