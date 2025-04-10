@@ -38,10 +38,8 @@ plt.show()
 
 # Objective 2
 
-
-
 # Calculate the average points scored and conceded for each team
-avg_points = df.groupby('team_name')[['points_for', 'points_against']].mean().reset_index()
+avg_points = file.groupby('team_name')[['points_for', 'points_against']].mean().reset_index()
 
 # Create the scatter plot
 plt.figure(figsize=(10, 8))
