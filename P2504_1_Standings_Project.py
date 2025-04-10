@@ -58,7 +58,7 @@ plt.tight_layout()
 plt.show()
 
 
-#Objective 3
+# Objective 3
 
 # Group data by year and calculate average margin of victory
 avg_margin_by_year = file.groupby('year')['margin_of_victory'].mean().reset_index()
@@ -78,6 +78,21 @@ plt.tight_layout()
 
 plt.show()
 
+# Objective 4
+
+# Set plot size
+plt.figure(figsize=(10, 6))
+
+# Create histogram
+sns.histplot(data=file, x='points_for', bins=30, kde=True, color='skyblue')
+
+# Add titles and labels
+plt.title('Distribution of Points Scored by Teams', fontsize=14)
+plt.xlabel('Points Scored')
+plt.ylabel('Number of Teams')
+plt.tight_layout()
+
+plt.show()
 
 
 
