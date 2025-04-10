@@ -35,7 +35,26 @@ plt.ylabel('Points Differential')
 plt.legend(title='Rank')
 plt.show()
 
+# Objective 2
 
+# Drop rows with nulls in the relevant columns
+file_filtered = file.dropna(subset=['margin_of_victory', 'playoffs'])
+
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(
+    data=file_filtered,
+    x='playoffs',
+    y='margin_of_victory',
+    palette='Set2'
+)
+
+plt.title('Margin of Victory: Playoff vs Non-Playoff Teams')
+plt.xlabel('Playoff Status')
+plt.ylabel('Margin of Victory')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
 
 
 
