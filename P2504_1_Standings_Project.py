@@ -95,6 +95,32 @@ plt.tight_layout()
 plt.show()
 
 
+# Objective 5
+
+
+
+
+# Step 1: Select only the most relevant columns
+selected_cols = ['wins', 'points_for', 'points_against', 'margin_of_victory',
+                 'simple_rating', 'strength_of_schedule']
+
+# Step 2: Create a subset dataframe
+subset_data = file[selected_cols]
+
+# Step 3: Calculate correlation matrix
+corr_matrix = subset_data.corr()
+
+# Step 4: Plot the refined heatmap
+plt.figure(figsize=(10, 6))
+sns.heatmap(corr_matrix, annot=True, cmap='YlGnBu', fmt=".2f", linewidths=0.5)
+plt.title('Correlation Heatmap of Key Performance Metrics')
+plt.tight_layout()
+plt.show()
+
+#Heatmap
+sns.pairplot(file[['wins', 'points_for', 'points_against', 'margin_of_victory', 'simple_rating']])
+plt.suptitle('Pairwise Relationships Between Key Metrics', y=1.02)
+plt.show()
 
 
 
