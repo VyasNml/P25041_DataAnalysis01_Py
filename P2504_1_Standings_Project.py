@@ -38,21 +38,21 @@ plt.show()
 
 # Objective 2
 
-# Drop rows with nulls in the relevant columns
-file_filtered = file.dropna(subset=['margin_of_victory', 'playoffs'])
 
 
 plt.figure(figsize=(10, 6))
-sns.boxplot(
+sns.scatterplot(
     data=file_filtered,
-    x='playoffs',
-    y='margin_of_victory',
-    palette='Set2'
+    x='offensive_ranking',
+    y='defensive_ranking',
+    hue='team_name',  
+    palette='tab10',
+    alpha=0.7
 )
 
-plt.title('Margin of Victory: Playoff vs Non-Playoff Teams')
-plt.xlabel('Playoff Status')
-plt.ylabel('Margin of Victory')
+plt.title('Offensive vs Defensive Rankings of Teams')
+plt.xlabel('Offensive Ranking (Lower is Better)')
+plt.ylabel('Defensive Ranking (Lower is Better)')
 plt.grid(True)
 plt.tight_layout()
 plt.show()
@@ -121,6 +121,7 @@ plt.show()
 sns.pairplot(file[['wins', 'points_for', 'points_against', 'margin_of_victory', 'simple_rating']])
 plt.suptitle('Pairwise Relationships Between Key Metrics', y=1.02)
 plt.show()
+
 
 
 
