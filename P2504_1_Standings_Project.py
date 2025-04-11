@@ -20,7 +20,7 @@ file = file.dropna()
 print(file.isnull().sum(),"\n")
 
 
-#Objective 1
+######### Objective 1 #########
 
 #Selecting Required data
 file['rank'] = file.groupby('year')['points_differential'].rank(method='first', ascending=False)
@@ -36,7 +36,7 @@ plt.ylabel('Points Differential')
 plt.legend(title='Rank')
 plt.show()
 
-# Objective 2
+######### Objective 2 #########
 
 # Calculate the average points scored and conceded for each team
 avg_points = file.groupby('team_name')[['points_for', 'points_against']].mean().reset_index()
@@ -54,7 +54,7 @@ plt.show()
 
 
 
-# Objective 3
+######### Objective 3 #########
 
 # Group data by year and calculate average margin of victory
 avg_margin_by_year = file.groupby('year')['margin_of_victory'].mean().reset_index()
@@ -74,7 +74,7 @@ plt.tight_layout()
 
 plt.show()
 
-# Objective 4
+######### Objective 4 #########
 
 # Set plot size
 plt.figure(figsize=(10, 6))
@@ -91,9 +91,7 @@ plt.tight_layout()
 plt.show()
 
 
-# Objective 5
-
-
+######### Objective 5 #########
 
 
 # Step 1: Select only the most relevant columns
