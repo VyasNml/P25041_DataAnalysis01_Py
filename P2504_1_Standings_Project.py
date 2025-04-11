@@ -27,15 +27,21 @@ print(df.isnull().sum(),"\n")
 print(df.describe())
 
 ######### Objective 1 #########
+# 4.1.	Objective 1 : Analyze how team wins have changed across different seasons to identify performance trends.
 
 #Selecting Required data
+# 4.1.1 Rank teams by points_differential within each year
 file['rank'] = file.groupby('year')['points_differential'].rank(method='first', ascending=False)
+# 4.1.2: Keep only top 3 ranks
 top3_file = file[file['rank'] <= 3]
+# 4.1.3: Convert rank to integer
 top3_file['rank'] = top3_file['rank'].astype(int)
 
 #Implementing Line Plot
 plt.figure(figsize=(14, 6))
+# 4.1.4: Plot the top 3 ranks
 sns.lineplot(data=top3_file, x='year', y='points_differential', hue='rank', style='rank', marker='o', dashes=True)
+# Titles and labels
 plt.title('Top 3 Teams by Points Differential Across Seasons (Rank-wise)')
 plt.xlabel('Year')
 plt.ylabel('Points Differential')
