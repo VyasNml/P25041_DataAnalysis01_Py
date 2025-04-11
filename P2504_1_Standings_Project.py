@@ -1,24 +1,30 @@
 #import staments
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 import seaborn as sns
 
+# 3.1 Reading file
+df = pd.read_csv("C:/Users/vyasn/OneDrive/Desktop/Academics/Project_1/P2504_1_Standings/P2504_1_standings_1.csv")
 
-#Reading file
-file = pd.read_csv("C:/Users/vyasn/OneDrive/Desktop/Academics/Project_1/P2504_1_Standings/P2504_1_standings_1.csv")
+# Printing to check if read() was succesfull
+print(df.head(),"\n")
 
-print(file.head(),"\n")
-
-# General info about the dataset
-print(file.info(),"\n")
+# 3.2 General info about the dataset
+print(df.info(),"\n")
 
 # Check for null values
-print(file.isnull().sum(),"\n")
-file['year'] = file['year'].fillna(method='ffill')
-print(file.isnull().sum(),"\n")
-file = file.dropna()
-print(file.isnull().sum(),"\n")
+print(df.isnull().sum(),"\n")
 
+# 3.3 Handling Missing Values
+df['year'] = df['year'].fillna(method='ffill')
+print(df.isnull().sum(),"\n")
+
+df = df.dropna()
+print(df.isnull().sum(),"\n")
+
+#3.4.	Statistical Summary
+print(df.describe())
 
 ######### Objective 1 #########
 
