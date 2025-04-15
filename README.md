@@ -1,18 +1,23 @@
 **Project Title: Visualizing_Team_Standings Data Analytics Project** 
+
 # 🔍 Overview
-This project is part of my coursework at Lovely Professional University for the subject INT375 - Python for Data Science. The objective was to analyze and visualize sports standings data to uncover team performance insights.
+
+This project is a learning-based attempt to analyze and visualize sports standings data, with the goal of uncovering insights into team performance. The process helped in upskilling through hands-on experience with data analysis and visualization techniques.
 
 # 🛠️ Technologies Used
+
 • Python
+
 • Pandas
+
 • Matplotlib
+
 • Seaborn
+
 • Jupyter Notebook / VS Code
 
-r:The plotted lines show the variation in point differentials among the top 3 teams in each season. Sharp rises or dips suggest standout performances or weaker competition. Patterns such as narrowing gaps can imply more competitive leagues, whereas wide gaps may indicate a few dominant teams.
-
-
 # 🎯 Objectives & Visual Insights
+
 1️⃣ **Objective 1**: Analyze how team wins have changed across different seasons to identify performance trends.
 
 **Description**: We analyze the top 3 teams per season based on points_differential, offering a clearer view of team dominance than win counts. The goal is to visualize how their performance shifts across seasons.
@@ -60,17 +65,26 @@ r:The plotted lines show the variation in point differentials among the top 3 te
 **Insight**: Teams with higher medians and narrower IQRs show consistent strong performance. Outliers highlight standout or poor seasons.
 
 # 📈 Key Learnings
+
 • Hands-on practice with data cleaning, transformation, and visualization.
+
 • Interpreting real-world sports data for analytical insights.
+
 • Strengthened storytelling through visuals using Python libraries to effectively communicate complex patterns and trends.
 
 # 🧠 Future Scope
-Add interactive dashboard using Plotly or Dash.
-Automate data updates via API integration for live sports data.
-Use machine learning to predict future rankings or outcomes.
+
+- Add interactive dashboard using Plotly or Dash.
+
+- Automate data updates via API integration for live sports data.
+
+- Use machine learning to predict future rankings or outcomes.
 
 # 🔗 References
-Python Documentation
-Pandas Official Docs
-Seaborn and Matplotlib Guides
+
+- Python Documentation
+
+- Pandas Official Docs
+
+- Seaborn and Matplotlib Guides
 Sports dataset (provided as part of coursework)
