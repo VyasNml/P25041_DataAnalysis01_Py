@@ -26,8 +26,9 @@ print(df.isnull().sum(),"\n")
 #3.4.	Statistical Summary
 print(df.describe())
 
+
 ######### Objective 1 #########
-# 4.1.	Objective 1 : Analyze how team wins have changed across different seasons to identify performance trends.
+# 4.1: Analyze how team wins have changed across different seasons to identify performance trends.
 
 #Selecting Required data
 # 4.1.1 Rank teams by points_differential within each year
@@ -49,6 +50,7 @@ plt.legend(title='Rank')
 plt.show()
 
 ######### Objective 2 #########
+# 4.2: Compare points scored versus points conceded to evaluate offensive and defensive strengths
 
 # Calculate the average points scored and conceded for each team
 avg_points = file.groupby('team_name')[['points_for', 'points_against']].mean().reset_index()
@@ -67,6 +69,7 @@ plt.show()
 
 
 ######### Objective 3 #########
+# 4.3: Explore the distribution and variation of victory margins among teams.
 
 # Group data by year and calculate average margin of victory
 avg_margin_by_year = file.groupby('year')['margin_of_victory'].mean().reset_index()
@@ -87,6 +90,7 @@ plt.tight_layout()
 plt.show()
 
 ######### Objective 4 #########
+# 4.4: Examine correlations between key performance metrics to discover influential factors
 
 # Set plot size
 plt.figure(figsize=(10, 6))
@@ -104,7 +108,7 @@ plt.show()
 
 
 ######### Objective 5 #########
-
+# 4.5: Examine correlations between key performance metrics to discover influential factors.
 
 # Step 1: Select only the most relevant columns
 selected_cols = ['wins', 'points_for', 'points_against', 'margin_of_victory',
