@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # 3.1 Reading file
-df = pd.read_csv("C:/Users/vyasn/OneDrive/Desktop/Academics/Project_1/P2504_1_Standings/P2504_1_standings_1.csv")
+df = pd.read_csv("./Standings_1.csv")
 
 # Printing to check if read() was succesfull
 print(df.head(),"\n")
